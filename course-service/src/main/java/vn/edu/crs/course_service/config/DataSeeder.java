@@ -22,9 +22,8 @@ public class DataSeeder implements CommandLineRunner {
             courseRepository.save(buildCourse("Lập Trình Java", 3, 30));
             courseRepository.save(buildCourse("Cơ Sở Dữ Liệu", 3, 25));
             courseRepository.save(buildCourse("Mạng Máy Tính", 3, 30));
-            courseRepository.save(buildCourse("Toán Rời Rạc", 2, 40));
             courseRepository.save(buildCourse("Trí Tuệ Nhân Tạo", 3, 20));
-            System.out.println("[DataSeeder] Đã khởi tạo 5 môn học mẫu vào course_db.");
+            System.out.println("[DataSeeder] Đã khởi tạo 4 môn học mẫu vào course_db.");
         } else {
             System.out.println("[DataSeeder] Dữ liệu môn học đã tồn tại, bỏ qua khởi tạo.");
         }
