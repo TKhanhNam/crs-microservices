@@ -63,6 +63,8 @@ spring:
           uri: http://localhost:8082
           predicates:
             - Path=/api/public/courses
+          filters:
+            - RewritePath=/api/public/courses, /courses
 
 partner:
   api-key: crs-partner-key-2026

@@ -26,6 +26,11 @@ public class RegistrationService {
                 .stream().map(this::toDTO).collect(Collectors.toList());
     }
 
+    public List<RegistrationRequestDTO> getMyRegistrations(Long studentId) {
+        return registrationRepository.findByStudentId(String.valueOf(studentId))
+                .stream().map(this::toDTO).collect(Collectors.toList());
+    }
+
     // Lay dang ky theo ID
     public RegistrationRequestDTO getById(Long id) {
         Registration reg = registrationRepository.findById(id)

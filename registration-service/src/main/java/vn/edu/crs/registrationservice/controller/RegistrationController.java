@@ -5,6 +5,7 @@ import vn.edu.crs.registrationservice.service.RegistrationService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,6 +23,13 @@ public class RegistrationController {
     @GetMapping
     public List<RegistrationRequestDTO> getAll() {
         return registrationService.getAll();
+    }
+
+    // GET /registrations/my — studentId lay tu JWT, khong nhan tu Client (chong IDOR)
+    @GetMapping("/my")
+    public List<RegistrationRequestDTO> getMyRegistrations(Authentication authentication) {
+        Long studentId = (Long) authentication.getCredentials();
+        return registrationService.getMyRegistrations(studentId);
     }
 
     // GET /registrations/{id}

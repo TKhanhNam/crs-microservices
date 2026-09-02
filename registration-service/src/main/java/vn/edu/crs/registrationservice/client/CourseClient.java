@@ -40,7 +40,7 @@ public class CourseClient {
         } catch (HttpClientErrorException.NotFound e) {
             throw new IllegalArgumentException("Mon hoc voi ID=" + courseId + " khong ton tai");
         } catch (ResourceAccessException e) {
-            throw new IllegalStateException("Khong the ket noi toi course-service");
+            throw new IllegalStateException("Khong the ket noi toi course-service, vui long thu lai sau");
         }
     }
 
